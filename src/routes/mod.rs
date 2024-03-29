@@ -37,4 +37,7 @@ pub fn create_routes() ->Router{
     .route("/user_agent", get(user_agent))
     .route("/middleware_message", get(middleware_message))
     .layer(Extension(share_data))
+    .layer(tracing_subscriber::fmt()
+    .with_max_level(tracing::Level::DEBUG)
+    .init())
 }
