@@ -1,9 +1,4 @@
-use std::any;
 
-use axum::{
-    http::Method, routing::{get, patch, post}, Extension, Router
-};
-use axum::http::header;
 
 mod hello;
 use hello::hello_world;
@@ -13,6 +8,13 @@ mod mirror_body_string;
 mod path_variable;
 mod user_agent;
 mod middleware_message;
+
+
+use axum::{
+    http::Method, routing::{get, patch, post}, Extension, Router
+};
+use axum::http::header;
+
 use mirror_body_json::mirror_body_json;
 use mirror_body_string::mirror_body_string;
 use query_params::query_params;
